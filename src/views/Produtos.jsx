@@ -81,7 +81,7 @@ export default function Produtos() {
   }, []);
 
   const handleDel = async (dados) => {
-    const json = await api.DelProdutos(dados.id);
+    const json = await api.DelProdutos(dados.idprodutos);
     if (json.error) {
       setError(json.error);
     } else {

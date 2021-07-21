@@ -39,7 +39,7 @@ const apiFetchDelete = async (endpoint, body) => {
   const json = await res.json();
 
   if (json.notallowed) {
-    window.localtion.href = `/client/${body.idclients}`;
+    window.localtion.href = `/produtos/${body.idprodutos}`;
     return;
   }
   return json;
@@ -76,8 +76,10 @@ export default {
     return json;
   },
 
-  DelProdutos: async (id) => {
-    const json = await apiFetchDelete(`/${id}`, { id });
+  DelProdutos: async (idprodutos) => {
+    const json = await apiFetchDelete(`/produtos/${idprodutos}`, {
+      idprodutos,
+    });
     return json;
   },
 };
